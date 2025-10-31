@@ -1,0 +1,14 @@
+{
+  "name": "cliniccare-plus",
+  "version": "1.0.0",
+  "description": "ClinicCare+ - Intelligent Clinic Assistant Platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "setup": "npm run setup --workspaces",
+    "dev": "npm run dev --workspaces"
+  }
+}
