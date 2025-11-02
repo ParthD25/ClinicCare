@@ -1,6 +1,64 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function CosmeticDentistryPage() {
+  const services = [
+    {
+      name: 'Teeth Whitening',
+      description: 'Professional whitening for a brighter, more confident smile',
+      image: 'https://images.unsplash.com/photo-1606811951340-8c1b6b1f7b5f?w=400&h=300&fit=crop',
+      features: ['In-office treatment', 'Custom trays', 'Lasting results']
+    },
+    {
+      name: 'Porcelain Veneers',
+      description: 'Custom shells that transform the appearance of your teeth',
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop',
+      features: ['Natural appearance', 'Durable material', 'Color correction']
+    },
+    {
+      name: 'Dental Crowns',
+      description: 'Full coverage restorations for damaged or weakened teeth',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop',
+      features: ['Strong protection', 'Natural look', 'Long-lasting']
+    },
+    {
+      name: 'Composite Bonding',
+      description: 'Tooth-colored resin to repair chips, cracks, and discoloration',
+      image: 'https://images.unsplash.com/photo-1588776815141-1a6b6c7b14b3?w=400&h=300&fit=crop',
+      features: ['Same-day results', 'Affordable', 'Conservative treatment']
+    },
+    {
+      name: 'Invisalign Clear Aligners',
+      description: 'Nearly invisible aligners for straighter teeth',
+      image: 'https://images.unsplash.com/photo-1606811985880-b4e6b6447c3d?w=400&h=300&fit=crop',
+      features: ['Removable', 'Comfortable', 'Discreet']
+    },
+    {
+      name: 'Smile Makeover',
+      description: 'Comprehensive treatment plan for your perfect smile',
+      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop',
+      features: ['Customized plan', 'Multiple treatments', 'Life-changing results']
+    }
+  ];
+
+  const beforeAfterImages = [
+    {
+      before: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=300&fit=crop',
+      after: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=300&fit=crop&sat=150&bri=110',
+      treatment: 'Teeth Whitening'
+    },
+    {
+      before: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=300&fit=crop',
+      after: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=300&fit=crop&sat=120',
+      treatment: 'Porcelain Veneers'
+    },
+    {
+      before: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=300&fit=crop',
+      after: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=300&fit=crop&sat=130',
+      treatment: 'Dental Crowns'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -25,91 +83,166 @@ export default function CosmeticDentistryPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section with Before/After */}
       <section className="bg-gradient-to-r from-blue-50 to-purple-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Cosmetic Dentistry</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Transform your smile with our advanced cosmetic dentistry services
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Transform Your Smile
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Modern cosmetic dentistry solutions for the smile you've always wanted
             </p>
+          </div>
+
+          {/* Before/After Hero */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="relative mb-4">
+                <Image
+                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop"
+                  alt="Before cosmetic dentistry"
+                  width={400}
+                  height={300}
+                  className="rounded-lg shadow-lg"
+                />
+                <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  BEFORE
+                </div>
+              </div>
+              <p className="text-gray-600">Discolored, uneven teeth</p>
+            </div>
+            <div className="text-center">
+              <div className="relative mb-4">
+                <Image
+                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop&sat=150&bri=110"
+                  alt="After cosmetic dentistry"
+                  width={400}
+                  height={300}
+                  className="rounded-lg shadow-lg"
+                />
+                <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  AFTER
+                </div>
+              </div>
+              <p className="text-gray-600">Bright, confident smile</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Content Sections */}
+      {/* Services Grid */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none">
-            <h2>Composite Fillings</h2>
-            <p>
-              Composite resins, or tooth-colored fillings, provide good durability and resistance to fracture
-              in small- to mid-size fillings that need to withstand moderate pressure from the constant stress of chewing.
-              They can be used on either front or back teeth. They are a good choice for people who prefer that their
-              fillings look more natural.
-            </p>
-            <p>
-              It generally takes longer to place a composite filling than it does for a metal filling.
-              That's because composite fillings require the tooth be kept clean and dry while the cavity is being filled.
-              Tooth-colored fillings are now used more often than amalgam or gold fillings, probably due to cosmetics.
-              In a society focused on a white, bright smile, people tend to want fillings that blend with the natural color of their teeth.
-            </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Cosmetic Services</h2>
+            <p className="text-lg text-gray-600">Choose from our range of modern cosmetic dentistry treatments</p>
+          </div>
 
-            <h2>Flexible Partial Denture</h2>
-            <p>
-              The development of flexible partial denture materials has allowed dentists to rethink the possibilities
-              of long-term treatment of partial edentulism. These materials can be used without the concurrent weaknesses
-              of methylmethacrylate (ie, frequent fracture, poor retention, lack of stability) or the technical difficulties
-              and expense of metal castings.
-            </p>
-            <p>
-              It is the purpose of this article to review the previously introduced clasps that have been found to be
-              exceptionally functional with flexible partial design and to introduce new variations in clasping and design expectations.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div className="relative h-48">
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.name}</h3>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <ul className="space-y-1 mb-4">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-gray-600">
+                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <h3>Valplast</h3>
-            <p>
-              Valplast is a flexible, nylon thermoplastic that is thinner and more translucent than traditional partials.
-              Doctors appreciate the minimal prep, easy insertion and long term strength. Patients love Valplast's
-              metal-free comfort and natural appearance.
-            </p>
+      {/* Before/After Gallery */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Real Results</h2>
+            <p className="text-lg text-gray-600">See the transformation our patients experience</p>
+          </div>
 
-            <h3>TCS Unbreakable RPDs</h3>
-            <p>
-              The TCS Unbreakable RPDs are thin, flexible, lightweight, and extremely comfortable. Doctors and patients
-              enjoy the unparalleled simplicity, comfort and aesthetics. Today, more and more dental practitioners are
-              relying on nylon-based removable partial dentures for their patients.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {beforeAfterImages.map((item, index) => (
+              <div key={index} className="text-center">
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <Image
+                      src={item.before}
+                      alt={`Before ${item.treatment}`}
+                      width={150}
+                      height={150}
+                      className="rounded-lg"
+                    />
+                    <p className="text-sm text-gray-500 mt-2">Before</p>
+                  </div>
+                  <div>
+                    <Image
+                      src={item.after}
+                      alt={`After ${item.treatment}`}
+                      width={150}
+                      height={150}
+                      className="rounded-lg"
+                    />
+                    <p className="text-sm text-gray-500 mt-2">After</p>
+                  </div>
+                </div>
+                <h4 className="font-semibold text-gray-900">{item.treatment}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <h2>Non-Metal Crown</h2>
+      {/* Why Choose Us */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Aspen Dental Care</h2>
+          </div>
 
-            <h3>E.Max</h3>
-            <p>
-              The E-Max crown is a type of all-ceramic crown which is preferred for its longer lasting, aesthetic qualities.
-              This crown and the Zirconia crown are worn due to their highly attractive appearance which ensures that they
-              compliment the rest of your teeth.
-            </p>
-            <p>
-              It is considered a good option for damaged, stained or poor quality teeth.
-            </p>
-
-            <h3>Zirconia</h3>
-            <p>
-              Zirconia (Zirconium Oxide) is a white powdered metal used to create dental frameworks for crowns, bridges
-              and other dental substructures. It replaces gold or stainless steel used in the past, creates the appearance
-              of a whiter more translucent tooth, and is transparent in xrays.
-            </p>
-            <p>
-              Zirconia has been in use in cosmetic dentistry for many years to acheive the most aesthetic result possible,
-              but has more recently become widely accepted as the dental material of choice.
-            </p>
-
-            <h2>Veneers</h2>
-            <p>
-              Dental veneers (sometimes called porcelain veneers or dental porcelain laminates) are wafer-thin,
-              custom-made shells of tooth-colored materials designed to cover the front surface of teeth to improve
-              your appearance. These shells are bonded to the front of the teeth changing their color, shape, size, or length.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🎯</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Expert Care</h3>
+              <p className="text-gray-600">Experienced cosmetic dentist with 20+ years of experience</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Latest Technology</h3>
+              <p className="text-gray-600">State-of-the-art equipment for the best results</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">💫</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Natural Results</h3>
+              <p className="text-gray-600">Beautiful, natural-looking smiles that last</p>
+            </div>
           </div>
         </div>
       </section>
@@ -118,13 +251,13 @@ export default function CosmeticDentistryPage() {
       <section className="bg-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Smile?</h2>
-          <p className="text-xl mb-8">Schedule a consultation to discuss your cosmetic dentistry options.</p>
+          <p className="text-xl mb-8">Schedule a free consultation and see what cosmetic dentistry can do for you.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="tel:+15107700393" className="bg-white text-blue-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors">
               Call: (510) 770-0393
             </Link>
             <Link href="/contact" className="border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-              Schedule Consultation
+              Free Consultation
             </Link>
           </div>
         </div>

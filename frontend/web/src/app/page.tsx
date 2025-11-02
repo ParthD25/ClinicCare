@@ -149,15 +149,23 @@ export default function HomePage() {
               <p className="mb-6">
                 At Aspen Dental Care, we try to make your visit a very pleasant one. Dr. Dave is an experienced Fremont Dentist serving Fremont surrounding areas.
               </p>
-              <div className="space-y-2">
+              <div className="space-y-2 mb-6">
                 <p><strong>Phone:</strong> (510) 770-0393</p>
                 <p><strong>Email:</strong> dr.ndave.dds@gmail.com</p>
                 <p><strong>Address:</strong> 39489 Fremont Blvd, Fremont, CA 94538</p>
               </div>
+
+              <h4 className="text-xl font-semibold mb-3">Office Hours</h4>
+              <div className="space-y-1">
+                <p><strong>Monday - Thursday:</strong> 9:00 AM - 6:00 PM</p>
+                <p><strong>Friday:</strong> By Appointment Only</p>
+                <p><strong>Saturday:</strong> 8:00 AM - 2:00 PM</p>
+                <p><strong>Sunday:</strong> Closed</p>
+              </div>
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-4">Connect with Us</h3>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 mb-6">
                 <a href="#" className="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-100 transition-colors">
                   Facebook
                 </a>
@@ -167,6 +175,14 @@ export default function HomePage() {
                 <a href="#" className="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-100 transition-colors">
                   Google
                 </a>
+              </div>
+
+              <div className="bg-white bg-opacity-10 p-6 rounded-lg">
+                <h4 className="text-lg font-semibold mb-3">Emergency Care Available</h4>
+                <p className="mb-3">Need immediate dental care? We're here for emergencies during business hours.</p>
+                <Link href="tel:+15107700393" className="bg-white text-blue-600 px-4 py-2 rounded font-semibold hover:bg-gray-100 transition-colors inline-block">
+                  Call Now
+                </Link>
               </div>
             </div>
           </div>
