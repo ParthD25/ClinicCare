@@ -1,5 +1,0 @@
-name = "cliniccare-web"
-compatibility_date = "2024-01-01"
-
-[vars]
-NEXT_PUBLIC_API_URL = "https://your-fastapi-backend-url.com"
