@@ -2,6 +2,7 @@ from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
 import json
+from fastapi.middleware.cors import CORSMiddleware
 
 from database import get_db
 from models import (
@@ -17,6 +18,15 @@ app = FastAPI(
     title="ClinicCare+ API",
     description="Backend API for ClinicCare+ dental clinic management system",
     version="1.0.0"
+)
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "https://4b8ec263.cliniccare-web.pages.dev"],  # Add your deployed domain
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 @app.get("/")
