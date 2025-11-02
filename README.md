@@ -85,6 +85,27 @@ Web portal available at http://localhost:3000
 - `GET /reminders` - Get patient reminders
 - `POST /reminders` - Create new reminders
 
+## 🚀 Deployment
+
+### Web Portal (Cloudflare Pages)
+```bash
+cd frontend/web
+npm run build
+wrangler pages deploy .next
+```
+
+### Backend API (Railway/Render)
+- FastAPI backend needs Python hosting (not Cloudflare)
+- Recommended: Railway.app or Render.com
+- See `CLOUDFLARE_DEPLOYMENT.md` for detailed instructions
+
+### Mobile App (App Stores)
+```bash
+cd frontend/mobile
+npx expo build:ios    # iOS
+npx expo build:android # Android
+```
+
 ## Tech Stack
 
 - **Mobile App**: React Native with Expo (cross-platform iOS/Android)

@@ -31,7 +31,7 @@ export default function PatientPortal() {
 
   const fetchPatients = async () => {
     try {
-      const response = await fetch('http://localhost:8000/patients');
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/patients`);
       const data = await response.json();
       setPatients(data);
     } catch (error) {
@@ -43,7 +43,7 @@ export default function PatientPortal() {
 
   const fetchPatientAppointments = async (patientId: number) => {
     try {
-      const response = await fetch(`http://localhost:8000/appointments?patient_id=${patientId}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/appointments?patient_id=${patientId}`);
       const data = await response.json();
       setAppointments(data);
     } catch (error) {
