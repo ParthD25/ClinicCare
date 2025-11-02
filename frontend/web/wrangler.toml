@@ -6,7 +6,7 @@ command = "npm run build"
 cwd = "."
 
 [build.upload]
-dir = ".next"
+dir = "out"
 format = "service-worker"
 
 [vars]

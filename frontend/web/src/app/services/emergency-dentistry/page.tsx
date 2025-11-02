@@ -50,7 +50,7 @@ export default function EmergencyDentistryPage() {
     {
       name: 'Tooth Extractions',
       description: 'Safe removal of damaged or infected teeth',
-      features: ['Local anesthesia', 'Sedation options', 'Post-care instructions']
+      features: ['Local numbing', 'Comfortable procedure', 'Post-care instructions']
     },
     {
       name: 'Infection Treatment',
@@ -269,8 +269,12 @@ export default function EmergencyDentistryPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="text-center mb-4">
+              <p className="text-white text-lg font-semibold mb-2">For immediate life-threatening emergencies:</p>
+              <p className="text-white text-2xl font-bold">🚨 CALL 911 🚨</p>
+            </div>
             <Link href="tel:+15107700393" className="bg-red-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-600 transition-colors">
-              🚨 Call Emergency: (510) 770-0393
+              Dental Emergency: (510) 770-0393
             </Link>
             <Link href="/contact" className="border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
               Get Directions

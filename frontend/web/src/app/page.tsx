@@ -8,13 +8,15 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-blue-600">
-                Aspen Dental Care
+              <Link href="/" className="flex items-center space-x-2">
+                <img src="/aspen-dental-logo.jpg" alt="Aspen Dental Care Logo" className="h-10 w-auto" />
+                <span className="text-2xl font-bold text-blue-600">Aspen Dental Care</span>
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors">Home</Link>
               <Link href="/services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</Link>
+              <Link href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors">Blog</Link>
               <Link href="/about" className="text-gray-700 hover:text-blue-600 transition-colors">About Us</Link>
               <Link href="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
               <Link href="/portal" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
@@ -151,8 +153,11 @@ export default function HomePage() {
               </p>
               <div className="space-y-2 mb-6">
                 <p><strong>Phone:</strong> (510) 770-0393</p>
-                <p><strong>Email:</strong> dr.ndave.dds@gmail.com</p>
-                <p><strong>Address:</strong> 39489 Fremont Blvd, Fremont, CA 94538</p>
+                <p><strong>Email:</strong> <a href="mailto:dr.ndave.dds@gmail.com" className="text-blue-600 hover:text-blue-800 underline">dr.ndave.dds@gmail.com</a></p>
+                <p><strong>Address:</strong> <a href="https://maps.google.com/maps?q=39489+Fremont+Blvd,Fremont,CA,94560" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline flex items-center gap-2">
+                  39489 Fremont Blvd, Fremont, CA 94560
+                  <span className="text-red-500">📍</span>
+                </a></p>
               </div>
 
               <h4 className="text-xl font-semibold mb-3">Office Hours</h4>
@@ -177,11 +182,12 @@ export default function HomePage() {
                 </a>
               </div>
 
-              <div className="bg-white bg-opacity-10 p-6 rounded-lg">
+              <div className="bg-gray-900 bg-opacity-90 p-6 rounded-lg text-white">
                 <h4 className="text-lg font-semibold mb-3">Emergency Care Available</h4>
-                <p className="mb-3">Need immediate dental care? We're here for emergencies during business hours.</p>
-                <Link href="tel:+15107700393" className="bg-white text-blue-600 px-4 py-2 rounded font-semibold hover:bg-gray-100 transition-colors inline-block">
-                  Call Now
+                <p className="mb-2 text-red-300 font-semibold">🚨 For immediate life-threatening emergencies: CALL 911</p>
+                <p className="mb-3 text-gray-200">Need dental emergency care? We're here for dental emergencies during business hours.</p>
+                <Link href="tel:+15107700393" className="bg-red-600 text-white px-4 py-2 rounded font-semibold hover:bg-red-700 transition-colors inline-block">
+                  Call Dental Emergency: (510) 770-0393
                 </Link>
               </div>
             </div>
